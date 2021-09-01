@@ -4,3 +4,60 @@
     font-weight: 500;
     color: #333;
 }
+.custom-nav-tab{
+    border-bottom: 0 !important;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {    
+    border-color: transparent !important;
+}
+
+// .nav-tabs .nav-link:hover {
+//     border: 1p solid #fff !important;
+// }
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    border-color: transparent !important;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #08c !important;
+}
+
+.nav-tabs .nav-link {
+    color:#333 !important;
+}
+.card-layout{
+    border:1px solid #eee;
+    padding: 0 0 1.5rem 0;
+}
+.name-plate{
+    background-color: #08c;
+    color: #fff;
+    padding:5px 0px 5px 0.6rem;
+}
+.flex-data{
+    display: flex;
+    margin-top:0.5rem;
+}
+.img-css{
+    padding: 2px;
+}
+.flex-right{
+    margin-left:10px
+}
+.comp-name{
+    color:#333;
+    font-size: 1rem;
+}
+.comp-loc{
+    color:#888;
+    font-size: 0.8rem;
+}
+.comp-order{
+    color:#08c;
+    font-size: 0.9rem;
+}
+.edit-pos{
+    float:right;
+    margin: 4px 8px 0px 0px;
+}
