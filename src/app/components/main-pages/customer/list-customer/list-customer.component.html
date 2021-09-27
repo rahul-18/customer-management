@@ -30,11 +30,13 @@
               <ng-container *ngIf="customers.length !== 0; else noCustomer">
                 <ng-container *ngFor="let customer of customers; index as i">
 
-                  <!-- <div class="col-3 mt-4">
+                  <div class="col-3 mt-4">
                     <div class="card-layout">
                       <div class="name-plate">
                         {{customer.customerName}}
-                        <i class="fa fa-pencil-square-o edit-pos" aria-hidden="true"></i>
+                        <i class="fa fa-trash edit-pos pointer" aria-hidden="true" (click)="removeCustomer(i)"></i>
+                        <i class="fa fa-pencil-square-o edit-pos pointer" aria-hidden="true"
+                          (click)="editCustomer(i)"></i>
                       </div>
                       <div class="flex-data">
                         <img *ngIf="customer.gender === 'Male'" class="img-css"
@@ -48,7 +50,7 @@
                         </div>
                       </div>
                     </div>
-                  </div> -->
+                  </div>
                 </ng-container>
               </ng-container>
               <ng-template #noCustomer>
@@ -72,6 +74,8 @@
                         <th scope="col">Company Name</th>
                         <th scope="col">Company Address</th>
                         <th scope="col">Order</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -89,6 +93,8 @@
                             <td>{{customer.customerCompName}}</td>
                             <td>{{customer.customerCompAdd}}</td>
                             <td><a href="">View Order</a></td>
+                            <td><span class="href-link" (click)="editCustomer(i)">Edit</span></td>
+                            <td><span class="href-link" (click)="removeCustomer(i)">Delete</span></td>
                           </tr>
                         </ng-container>
                       </ng-container>
