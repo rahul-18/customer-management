@@ -2,6 +2,8 @@ import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import swal from 'sweetalert';
+
 var $: any;
 @Component({
   selector: 'cm-list-customer',
@@ -56,8 +58,26 @@ export class ListCustomerComponent implements OnInit {
     this._router.navigate(['/edit-customer', i])
   }
   removeCustomer(i) {
-    this.customers.splice(i, 1);
-    localStorage.removeItem('customers');
-    localStorage.setItem('customers', JSON.stringify(this.customers));
+
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this customer!",
+      icon: "warning",
+      buttons: ['Cancel', 'Remove it'],
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          this.customers.splice(i, 1);
+          localStorage.removeItem('customers');
+          localStorage.setItem('customers', JSON.stringify(this.customers));
+          swal("Your Customer has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your customer is safe!");
+        }
+      });
   }
+
 }
