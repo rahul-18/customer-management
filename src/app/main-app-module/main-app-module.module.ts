@@ -5,11 +5,12 @@ import { CreateCustomerComponent } from '../components/main-pages/customer/custo
 import { MainNavComponent } from '../components/shared-comp/main-nav/main-nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditCustomerComponent } from '../components/main-pages/customer/customer-follow-up/edit-customer/edit-customer.component';
+import { CustomerInfoComponent } from '../components/main-pages/customer/customer-follow-up/customer-info/customer-info.component';
 
 
 
 @NgModule({
-  declarations: [ListCustomerComponent, CreateCustomerComponent, MainNavComponent, EditCustomerComponent],
+  declarations: [ListCustomerComponent, CreateCustomerComponent, MainNavComponent, EditCustomerComponent, CustomerInfoComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule

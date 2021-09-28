@@ -26,12 +26,12 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
           <div class="container-fluid px-0">
-            <div class="row mt-5">
+            <div class="row mt-2 mb-4">
               <ng-container *ngIf="customers.length !== 0; else noCustomer">
                 <ng-container *ngFor="let customer of customers; index as i">
 
                   <div class="col-3 mt-4">
-                    <div class="card-layout">
+                    <div class="card-layout pointer" (click)="showCustomerInfo(i)">
                       <div class="name-plate">
                         {{customer.customerName}}
                         <i class="fa fa-trash edit-pos pointer" aria-hidden="true" (click)="removeCustomer(i)"></i>
@@ -44,7 +44,7 @@
                         <img *ngIf="customer.gender === 'Female'" class="img-css"
                           src="./../../../../../assets/images/female-customer.png" alt="" width="80" height="80">
                         <div class="flex-right">
-                          <div class="comp-name"></div>{{customer.customerCompName}}
+                          <div class="comp-name">{{customer.customerCompName}}</div>
                           <div class="comp-loc">{{customer.customerCompAdd}}</div>
                           <div><a href="">View Order</a></div>
                         </div>

@@ -57,6 +57,11 @@ export class ListCustomerComponent implements OnInit {
     console.log("route to edit customer");
     this._router.navigate(['/edit-customer', i])
   }
+  showCustomerInfo(i) {
+    console.log("route to edit customer");
+    this._router.navigate(['/customer-info', i])
+
+  }
   removeCustomer(i) {
 
     swal({
