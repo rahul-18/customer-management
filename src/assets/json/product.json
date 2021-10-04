@@ -1,0 +1,66 @@
+[
+    {
+        "basketBall": [
+            {
+                "prodName": "Basket Ball",
+                "prodId": "BB-1",
+                "prodImg": "",
+                "prodStarRating": 3,
+                "reviedPeople": 3000,
+                "prodPrice": 200
+            }
+        ]
+    },
+    {
+        "cricketBall": [
+            {
+                "prodName": "Cricket Ball",
+                "prodId": "CB-1",
+                "prodImg": "",
+                "prodStarRating": 3,
+                "reviedPeople": 3000,
+                "prodPrice": 200
+            }
+        ]
+    },
+    {
+        "footBall": [
+            {
+                "prodName": "Foot Ball",
+                "prodId": "FB-1",
+                "prodImg": "",
+                "prodStarRating": 3,
+                "reviedPeople": 3000,
+                "prodPrice": 200
+            }
+        ]
+    },
+    {
+        "sportShoes": [
+            {
+                "prodName": "Sport Shoes",
+                "prodId": "SS-1",
+                "prodImg": "",
+                "prodStarRating": 3,
+                "reviedPeople": 3000,
+                "prodPrice": 200
+            },
+            {
+                "prodName": "Sport Shoes",
+                "prodId": "SS-2",
+                "prodImg": "",
+                "prodStarRating": 3,
+                "reviedPeople": 3000,
+                "prodPrice": 200
+            },
+            {
+                "prodName": "Sport Shoes",
+                "prodId": "SS-3",
+                "prodImg": "",
+                "prodStarRating": 3,
+                "reviedPeople": 3000,
+                "prodPrice": 200
+            }
+        ]
+    }
+]

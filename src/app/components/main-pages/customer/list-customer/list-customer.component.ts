@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
+declare var $: any;
 
-var $: any;
 @Component({
   selector: 'cm-list-customer',
   templateUrl: './list-customer.component.html',
@@ -21,6 +21,7 @@ export class ListCustomerComponent implements OnInit {
     gender: new FormControl(''),
     customerCompName: new FormControl(''),
     customerCompAdd: new FormControl(''),
+    order: new FormControl([])
   });
 
   customers = [];
@@ -45,6 +46,7 @@ export class ListCustomerComponent implements OnInit {
       gender: this.customerForm.value.gender,
       customerCompName: this.customerForm.value.customerCompName,
       customerCompAdd: this.customerForm.value.customerCompAdd,
+      order: []
     }
     console.log(customer);
     this.customers.push(customer);
@@ -53,7 +55,8 @@ export class ListCustomerComponent implements OnInit {
     this.customerForm.reset();
     $('#myTab a[href="#card"]').tab('show')
   }
-  editCustomer(i) {
+  editCustomer(i, ev) {
+    ev.stopPropagation();
     console.log("route to edit customer");
     this._router.navigate(['/edit-customer', i])
   }
@@ -62,7 +65,8 @@ export class ListCustomerComponent implements OnInit {
     this._router.navigate(['/customer-info', i])
 
   }
-  removeCustomer(i) {
+  removeCustomer(i, ev) {
+    ev.stopPropagation();
 
     swal({
       title: "Are you sure?",

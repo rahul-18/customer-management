@@ -19,6 +19,7 @@ export class EditCustomerComponent implements OnInit {
     gender: new FormControl(''),
     customerCompName: new FormControl(''),
     customerCompAdd: new FormControl(''),
+    order: new FormControl([])
   });
 
   customers = [];
@@ -44,6 +45,7 @@ export class EditCustomerComponent implements OnInit {
       gender: customer.gender,
       customerCompName: customer.customerCompName,
       customerCompAdd: customer.customerCompAdd,
+      order: customer.order
     });
   }
 
@@ -55,6 +57,7 @@ export class EditCustomerComponent implements OnInit {
       gender: this.customerForm.value.gender,
       customerCompName: this.customerForm.value.customerCompName,
       customerCompAdd: this.customerForm.value.customerCompAdd,
+      order: this.customers[this.cId].order
     }
     console.log(customer);
     this.customers.splice(this.cId, 1, customer);

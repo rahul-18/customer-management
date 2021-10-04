@@ -13,12 +13,12 @@
                     <a class="nav-link active pl-0" id="customerDetail-tab" data-toggle="tab" href="#customerDetail"
                         role="tab" aria-controls="customerDetail" aria-selected="true"><i class="fa fa-th-list mr-1"
                             aria-hidden="true"></i>
-                        customer Detail</a>
+                        Customer Detail</a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="customerOrder-tab" data-toggle="tab" href="#customerOrder" role="tab"
                         aria-controls="customerOrder" aria-selected="false"><i class="fa fa-first-order mr-1"
-                            aria-hidden="true"></i> customer Order</a>
+                            aria-hidden="true"></i> Customer Order</a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="customerEdit-tab" data-toggle="tab" href="#customerEdit" role="tab"
@@ -64,8 +64,23 @@
                     <div class="mt-3">
                         <div class="container-fluid px-0">
                             <div class="row">
-                                <div class="col-12 mt-4">
-                                    customerOrder tab
+                                <div class="col-12 mt-2">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Basket Ball</td>
+                                                <td class="text-right">$ 766</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sport Shoes</td>
+                                                <td class="text-right">$ 766</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bold-border">Grand Total</td>
+                                                <td class="text-right bold-border">$ 766</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +90,31 @@
                     <div class="container-fluid px-0">
                         <div class="row">
                             <div class="col-5 mt-3">
-                                customerEdit tab
+                                <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group">
+                                        <label for="name">Customer Name</label>
+                                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                                            formControlName="customerName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Select Gender</label>
+                                        <select class="form-control" id="gender" formControlName="gender">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="companyName">Customer Company</label>
+                                        <input type="text" class="form-control" id="companyName"
+                                            formControlName="customerCompName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="companyAdd">Customer Company Address</label>
+                                        <input type="text" class="form-control" id="companyAdd"
+                                            formControlName="customerCompAdd">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>

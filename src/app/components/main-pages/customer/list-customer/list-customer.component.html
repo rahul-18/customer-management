@@ -34,9 +34,10 @@
                     <div class="card-layout pointer" (click)="showCustomerInfo(i)">
                       <div class="name-plate">
                         {{customer.customerName}}
-                        <i class="fa fa-trash edit-pos pointer" aria-hidden="true" (click)="removeCustomer(i)"></i>
+                        <i class="fa fa-trash edit-pos pointer" aria-hidden="true"
+                          (click)="removeCustomer(i, $event)"></i>
                         <i class="fa fa-pencil-square-o edit-pos pointer" aria-hidden="true"
-                          (click)="editCustomer(i)"></i>
+                          (click)="editCustomer(i, $event)"></i>
                       </div>
                       <div class="flex-data">
                         <img *ngIf="customer.gender === 'Male'" class="img-css"
@@ -81,7 +82,7 @@
                     <tbody>
                       <ng-container *ngIf="customers.length !== 0; else noCustomer">
                         <ng-container *ngFor="let customer of customers; index as i">
-                          <tr>
+                          <tr class="pointer" (click)="showCustomerInfo(i)">
                             <th scope="row" class="p-1">
                               <img *ngIf="customer.gender === 'Male'" class="img-css"
                                 src="./../../../../../assets/images/male-customer.jpeg" alt="" width="45" height="45">
@@ -93,8 +94,8 @@
                             <td>{{customer.customerCompName}}</td>
                             <td>{{customer.customerCompAdd}}</td>
                             <td><a href="">View Order</a></td>
-                            <td><span class="href-link" (click)="editCustomer(i)">Edit</span></td>
-                            <td><span class="href-link" (click)="removeCustomer(i)">Delete</span></td>
+                            <td><span class="href-link" (click)="editCustomer(i, $event)">Edit</span></td>
+                            <td><span class="href-link" (click)="removeCustomer(i, $event)">Delete</span></td>
                           </tr>
                         </ng-container>
                       </ng-container>
