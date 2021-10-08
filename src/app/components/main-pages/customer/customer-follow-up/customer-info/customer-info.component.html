@@ -65,22 +65,60 @@
                         <div class="container-fluid px-0">
                             <div class="row">
                                 <div class="col-12 mt-2">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <td>Basket Ball</td>
-                                                <td class="text-right">$ 766</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sport Shoes</td>
-                                                <td class="text-right">$ 766</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="bold-border">Grand Total</td>
-                                                <td class="text-right bold-border">$ 766</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <ng-container *ngIf="customer.order.length !== 0; else noOrder">
+                                        <table class="table">
+                                            <tbody>
+
+                                                <ng-container *ngFor="let order of customer.order; index as ord">
+                                                    <tr>
+                                                        <td>{{order.prodName}}</td>
+                                                        <td class="text-right">&#8377; {{order.prodPrice}} <span
+                                                                class="order-remove-btn"
+                                                                (click)="removeOrder(ord)">Remove</span></td>
+                                                    </tr>
+                                                </ng-container>
+                                                <tr>
+                                                    <td class="bold-border">Grand Total</td>
+                                                    <td class="text-right bold-border total-amt-adjust">&#8377;
+                                                        {{getGrandTotal(customer.order)}}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </ng-container>
+                                    <ng-template #noOrder>
+                                        No order placed till now.
+                                    </ng-template>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 mt-2">
+                                    <div class="prod-category-head">Other product to select</div>
+                                </div>
+                            </div>
+                            <div class="row mt-4" *ngFor="let prod of prodList; inde as i">
+                                <div class="col-12 mt-2 mb-2">
+                                    <div class="prod-category"> {{prod.category}}</div>
+                                </div>
+                                <div class="col-3" *ngFor="let type of prod.types; inde as j">
+                                    <div class="outer-boundry">
+                                        <div class="add-order-btn-pos">
+                                            <div class="add-order-btn pointer" (click)="addToOrder(i,j, type)">Add to
+                                                Order</div>
+                                        </div>
+                                        <div class="img-parent">
+                                            <img src="./../../../../../../assets/images/male-customer.jpeg" alt="">
+                                        </div>
+
+                                        <div class="prod-name">{{type.prodName}}</div>
+                                        <div class="star-rating">
+                                            <img *ngFor="let rate of getStarRating(type.prodStarRating)"
+                                                src="./../../../../../../assets/images/star.png" alt="" width="12"
+                                                height="12">
+                                            <span>{{type.reviewedPeople}}</span>
+                                        </div>
+                                        <div class="price"><span>&#8377;</span>{{type.prodPrice}}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
