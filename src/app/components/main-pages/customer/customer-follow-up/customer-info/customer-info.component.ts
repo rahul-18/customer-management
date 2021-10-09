@@ -87,6 +87,7 @@ export class CustomerInfoComponent implements OnInit {
     this.customers[this.cId].order.push(prodInfo);
     localStorage.removeItem('customers');
     localStorage.setItem('customers', JSON.stringify(this.customers));
+    swal("Congratulations!", "Product has been added to order", "success");
   }
   getGrandTotal(allOrders) {
     let total = 0;
