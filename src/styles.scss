@@ -30,3 +30,11 @@ body {
 .pointer{
     cursor: pointer;
 }
+.href-link{
+    font-size: 0.9rem;
+    color: #08c;
+}
+.href-link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,37 @@
+<!-- <cm-main-nav></cm-main-nav>
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-4">
+            <i class="fa fa-first-order fa-2x" aria-hidden="true"></i>
+            <div class="heading ml-2">Orders</div>
+        </div>
+    </div>
+</div> -->
+<div class="back-btn" (click)="backClick()">Back</div>
+<ng-container *ngFor="let prod of prodList; inde as i">
+    <div class="row mt-4 mb-5">
+        <div class="col-12 mt-2 mb-2">
+            <div class="prod-category"> {{prod.category}}</div>
+        </div>
+        <div class="col-3" *ngFor="let type of prod.types; inde as j">
+            <div class="outer-boundry">
+                <div class="add-order-btn-pos">
+                    <div class="add-order-btn pointer" (click)="addToOrder(i,j, type)">Add
+                        to
+                        Order</div>
+                </div>
+                <div class="img-parent">
+                    <img src="./../../../../../../assets/images/male-customer.jpeg" alt="">
+                </div>
+
+                <div class="prod-name">{{type.prodName}}</div>
+                <div class="star-rating">
+                    <img *ngFor="let rate of getStarRating(type.prodStarRating)"
+                        src="./../../../../../../assets/images/star.png" alt="" width="12" height="12">
+                    <span>{{type.reviewedPeople}}</span>
+                </div>
+                <div class="price"><span>&#8377;</span>{{type.prodPrice}}</div>
+            </div>
+        </div>
+    </div>
+</ng-container>

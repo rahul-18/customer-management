@@ -7,8 +7,8 @@
                 "prodId": "BB-1",
                 "prodImg": "",
                 "prodStarRating": 2,
-                "reviewedPeople": 3000,
-                "prodPrice": 200
+                "reviewedPeople": 1801,
+                "prodPrice": 7999
             }
         ]
     },
@@ -20,8 +20,8 @@
                 "prodId": "CB-1",
                 "prodImg": "",
                 "prodStarRating": 4,
-                "reviewedPeople": 3000,
-                "prodPrice": 200
+                "reviewedPeople": 3098,
+                "prodPrice": 6999
             }
         ]
     },
@@ -33,8 +33,8 @@
                 "prodId": "FB-1",
                 "prodImg": "",
                 "prodStarRating": 3,
-                "reviewedPeople": 3000,
-                "prodPrice": 200
+                "reviewedPeople": 7658,
+                "prodPrice": 7899
             }
         ]
     },
@@ -46,24 +46,24 @@
                 "prodId": "SS-1",
                 "prodImg": "",
                 "prodStarRating": 5,
-                "reviewedPeople": 3000,
-                "prodPrice": 200
+                "reviewedPeople": 8787,
+                "prodPrice": 15799
             },
             {
                 "prodName": "Sport Shoes",
                 "prodId": "SS-2",
                 "prodImg": "",
                 "prodStarRating": 1,
-                "reviewedPeople": 3000,
-                "prodPrice": 200
+                "reviewedPeople": 3678,
+                "prodPrice": 12899
             },
             {
                 "prodName": "Sport Shoes",
                 "prodId": "SS-3",
                 "prodImg": "",
                 "prodStarRating": 2,
-                "reviewedPeople": 3000,
-                "prodPrice": 200
+                "reviewedPeople": 8765,
+                "prodPrice": 14599
             }
         ]
     }
