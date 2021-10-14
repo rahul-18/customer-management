@@ -7,6 +7,7 @@ import swal from 'sweetalert';
   styleUrls: ['./orders-list.component.scss']
 })
 export class OrdersListComponent implements OnInit {
+  customerCreation: boolean = false
   customers = [];
   cId;
   productPage: boolean = false;
@@ -39,5 +40,12 @@ export class OrdersListComponent implements OnInit {
   }
   backToList(ev) {
     this.productPage = ev;
+  }
+  createCustomer() {
+    this.customerCreation = true;
+  }
+  backToPrevious() {
+    this.customerCreation = false;
+    this.customers = JSON.parse(localStorage.getItem('customers'));
   }
 }

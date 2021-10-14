@@ -6,11 +6,12 @@ import { ListCustomerComponent } from './components/main-pages/customer/list-cus
 import { OrdersListComponent } from './components/main-pages/orders/orders-list/orders-list.component';
 
 const routes: Routes = [
-  { path: '', component: ListCustomerComponent },
+  { path: '', redirectTo: '/list-customer', pathMatch: 'full' },
   { path: 'list-customer', component: ListCustomerComponent },
   { path: 'edit-customer/:cId', component: EditCustomerComponent },
   { path: 'customer-info/:cId', component: CustomerInfoComponent },
-  { path: 'orders', component: OrdersListComponent }
+  { path: 'orders', component: OrdersListComponent },
+  // { path: '**', component: ListCustomerComponent }
 
 
 

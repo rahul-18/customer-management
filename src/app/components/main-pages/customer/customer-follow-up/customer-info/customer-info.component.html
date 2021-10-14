@@ -6,17 +6,41 @@
             <div class="heading ml-2">Customer Information</div>
         </div>
     </div>
+    <div class="row mt-2 mb-4">
+        <div class="col-12">
+            <ng-container *ngIf="customer; else error">
+                <div class="flex-data">
+                    <img *ngIf="customer.gender === 'Male'" class="img-css"
+                        src="./../../../../../assets/images/male-customer.jpeg" alt="" width="130" height="130">
+                    <img *ngIf="customer.gender === 'Female'" class="img-css"
+                        src="./../../../../../assets/images/female-customer.png" alt="" width="130" height="130">
+                    <div class="flex-right">
+                        <div>
+                            <div class="comp-name">{{customer.customerName}}</div>
+                            <div class="comp-loc">{{customer.customerCompName}},
+                                {{customer.customerCompAdd}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <img class="w-100 mt-3" src="./../../../../../../assets/images/map_view.png" alt=""> -->
+            </ng-container>
+            <ng-template #error>
+                Some error while fething customer detail
+            </ng-template>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12 mt-4">
             <ul class="nav nav-tabs custom-nav-tab" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
+                <!-- <li class="nav-item" role="presentation">
                     <a class="nav-link active pl-0" id="customerDetail-tab" data-toggle="tab" href="#customerDetail"
                         role="tab" aria-controls="customerDetail" aria-selected="true"><i class="fa fa-th-list mr-1"
                             aria-hidden="true"></i>
                         Customer Detail</a>
-                </li>
+                </li> -->
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="customerOrder-tab" data-toggle="tab" href="#customerOrder" role="tab"
+                    <a class="nav-link active" id="customerOrder-tab" data-toggle="tab" href="#customerOrder" role="tab"
                         aria-controls="customerOrder" aria-selected="false"><i class="fa fa-first-order mr-1"
                             aria-hidden="true"></i> Customer Order</a>
                 </li>
@@ -28,7 +52,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="customerDetail" role="tabpanel"
+                <!-- <div class="tab-pane fade show active" id="customerDetail" role="tabpanel"
                     aria-labelledby="customerDetail-tab">
                     <div class="container-fluid px-0">
                         <div class="row mt-2 mb-4">
@@ -59,8 +83,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="customerOrder" role="tabpanel" aria-labelledby="customerOrder-tab">
+                </div> -->
+                <div class="tab-pane fade show active" id="customerOrder" role="tabpanel"
+                    aria-labelledby="customerOrder-tab">
                     <div class="mt-3">
                         <div class="container-fluid px-0">
                             <div class="row">

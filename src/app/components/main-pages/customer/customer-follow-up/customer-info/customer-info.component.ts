@@ -71,6 +71,7 @@ export class CustomerInfoComponent implements OnInit {
     this.customers.splice(this.cId, 1, customer);
     localStorage.removeItem('customers');
     localStorage.setItem('customers', JSON.stringify(this.customers));
+    window.location.reload();
     // this._router.navigate(['/list-customer'])
   }
   getStarRating(num) {

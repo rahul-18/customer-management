@@ -1,1 +1,22 @@
-<p>create-customer works!</p>
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Customer Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" formControlName="customerName">
+    </div>
+    <div class="form-group">
+        <label for="gender">Select Gender</label>
+        <select class="form-control" id="gender" formControlName="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="companyName">Customer Company</label>
+        <input type="text" class="form-control" id="companyName" formControlName="customerCompName">
+    </div>
+    <div class="form-group">
+        <label for="companyAdd">Customer Company Address</label>
+        <input type="text" class="form-control" id="companyAdd" formControlName="customerCompAdd">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

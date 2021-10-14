@@ -1,60 +1,89 @@
 <cm-main-nav></cm-main-nav>
-<div class="container">
-    <div class="row">
-        <div class="col-12 mt-4">
-            <i class="fa fa-first-order fa-2x" aria-hidden="true"></i>
-            <div class="heading ml-2">Orders</div>
+<ng-container *ngIf="customerCreation; else orders">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <span (click)="backToPrevious()">
+                    <i class="fa fa-angle-left fa-back-btn pointer" aria-hidden="true"></i>
+                    <span class="back-btn pointer">Back</span>
+                </span>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="heading">Customer Creation</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 mt-3">
+                <cm-create-customer></cm-create-customer>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-template #orders>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <i class="fa fa-first-order fa-2x" aria-hidden="true"></i>
+                <div class="heading ml-2">Orders</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" align="right">
+                <button class="add-cust-btn" (click)="createCustomer()">
+                    Add Customer
+                </button>
+            </div>
+        </div>
+        <div class="mt-3">
+            <ng-container *ngIf="productPage === false; else showProductList">
+                <div class="container-fluid px-0">
+                    <div class="row">
+                        <div class="col-12 mt-4">
+                            <ng-container *ngIf="customers.length !== 0; else noCustomer">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col" class="w-25">Name</th>
+                                            <th scope="col">Company Name</th>
+                                            <th scope="col">Company Address</th>
+                                            <th scope="col">Order Total</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ng-container *ngFor="let customer of customers; index as i">
+                                            <tr class="pointer">
+                                                <th scope="row" class="p-1">
+                                                    <img *ngIf="customer.gender === 'Male'" class="img-css"
+                                                        src="./../../../../../assets/images/male-customer.jpeg" alt=""
+                                                        width="45" height="45">
+                                                    <img *ngIf="customer.gender === 'Female'" class="img-css"
+                                                        src="./../../../../../assets/images/female-customer.png" alt=""
+                                                        width="45" height="45">
+
+                                                </th>
+                                                <td>{{customer.customerName}}</td>
+                                                <td>{{customer.customerCompName}}</td>
+                                                <td>{{customer.customerCompAdd}}</td>
+                                                <td>&#8377; {{getGrandTotal(customer.order)}}</td>
+                                                <td class="href-link" (click)="routeToOrder(i)">Add Order</td>
+                                            </tr>
+                                        </ng-container>
+                                    </tbody>
+                                </table>
+                            </ng-container>
+                            <ng-template #noCustomer>
+                                No customer
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #showProductList>
+                <cm-product-list (product)="addOrderToCustomer($event)" (back)="backToList($event)"></cm-product-list>
+            </ng-template>
         </div>
     </div>
 
-    <div class="mt-3">
-        <ng-container *ngIf="productPage === false; else showProductList">
-            <div class="container-fluid px-0">
-                <div class="row">
-                    <div class="col-12 mt-4">
-                        <ng-container *ngIf="customers.length !== 0; else noCustomer">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col" class="w-25">Name</th>
-                                        <th scope="col">Company Name</th>
-                                        <th scope="col">Company Address</th>
-                                        <th scope="col">Order Total</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <ng-container *ngFor="let customer of customers; index as i">
-                                        <tr class="pointer">
-                                            <th scope="row" class="p-1">
-                                                <img *ngIf="customer.gender === 'Male'" class="img-css"
-                                                    src="./../../../../../assets/images/male-customer.jpeg" alt=""
-                                                    width="45" height="45">
-                                                <img *ngIf="customer.gender === 'Female'" class="img-css"
-                                                    src="./../../../../../assets/images/female-customer.png" alt=""
-                                                    width="45" height="45">
-
-                                            </th>
-                                            <td>{{customer.customerName}}</td>
-                                            <td>{{customer.customerCompName}}</td>
-                                            <td>{{customer.customerCompAdd}}</td>
-                                            <td>&#8377; {{getGrandTotal(customer.order)}}</td>
-                                            <td class="href-link" (click)="routeToOrder(i)">Add Order</td>
-                                        </tr>
-                                    </ng-container>
-                                </tbody>
-                            </table>
-                        </ng-container>
-                        <ng-template #noCustomer>
-                            No customer
-                        </ng-template>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
-        <ng-template #showProductList>
-            <cm-product-list (product)="addOrderToCustomer($event)" (back)="backToList($event)"></cm-product-list>
-        </ng-template>
-    </div>
-</div>
+</ng-template>
