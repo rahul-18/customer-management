@@ -69,6 +69,22 @@
     text-decoration: underline;
     cursor: pointer;
 }
+.dropdown-style.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0px; // remove the gap so it doesn't close
+}
+// 
+
+.dropdown-style.dropdown .dropdown-menu {
+    top: 0 !important;
+    right: 20px !important;
+    min-width: 7rem !important;
+    left:auto;
+    padding: 0 0 !important;
+}
+.vert-dot{
+    color: #666;
+}
 
 
 

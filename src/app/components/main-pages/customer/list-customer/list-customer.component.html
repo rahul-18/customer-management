@@ -76,7 +76,6 @@
                         <th scope="col">Company Address</th>
                         <th scope="col">Order</th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -94,8 +93,26 @@
                             <td>{{customer.customerCompName}}</td>
                             <td>{{customer.customerCompAdd}}</td>
                             <td><a href="">View Order</a></td>
-                            <td><span class="href-link" (click)="editCustomer(i, $event)">Edit</span></td>
-                            <td><span class="href-link" (click)="removeCustomer(i, $event)">Delete</span></td>
+                            <!-- <td><span class="href-link" (click)="editCustomer(i, $event)">Edit</span></td>
+                            <td><span class="href-link" (click)="removeCustomer(i, $event)">Delete</span></td> -->
+                            <td>
+                              <div class="nav-item">
+                                <div class="dropdown dropdown-style">
+                                  <div type="button" id="servicesType" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v vert-dot" aria-hidden="true"></i>
+                                  </div>
+                                  <div class="dropdown-menu" aria-labelledby="servicesType">
+                                    <a class="dropdown-item">
+                                      <span class="href-link" (click)="editCustomer(i, $event)">Edit</span>
+                                    </a>
+                                    <a class="dropdown-item">
+                                      <span class="href-link" (click)="removeCustomer(i, $event)">Delete</span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                         </ng-container>
                       </ng-container>

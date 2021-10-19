@@ -1,3 +1,26 @@
 {
-    "editor.formatOnSave": true
+    // "workbench.iconTheme": "material-icon-theme",
+    "guides.enabled": false,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "explorer.confirmDelete": false,
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace,arial",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.statusBar.visible": true,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 200,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "angularConsole.useNVM": false,
+    // "terminal.integrated.shell.osx": "/bin/zsh",
+    "editor.cursorBlinking": "expand",
+    "gitlens.codeLens.includeSingleLineSymbols": true,
+    "typescript.preferences.quoteStyle": "double",
+    "javascript.preferences.quoteStyle": "double",
+    "auto-rename-tag.activationOnLanguage": [
+        "*"
+    ],
+    "typescript.preferences.importModuleSpecifier": "non-relative"
 }
