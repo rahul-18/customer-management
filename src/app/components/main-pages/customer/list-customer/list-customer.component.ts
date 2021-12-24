@@ -25,6 +25,8 @@ export class ListCustomerComponent implements OnInit {
   });
 
   customers = [];
+  num1 = 2;
+  num2 = 3;
 
   ngOnInit(): void {
     if (localStorage.getItem('customers') && localStorage.getItem('customers').length !== 0) {
@@ -32,6 +34,29 @@ export class ListCustomerComponent implements OnInit {
     } else {
       localStorage.setItem('customers', JSON.stringify([]));
     }
+
+    var promise = new Promise((resolve, reject) => {
+      let x = 2;
+      let y = 2;
+      if (x === y) {
+        let c = 'that will come-----'
+        resolve(c);
+      } else {
+        let d = 'that will not come'
+        reject(d);
+      }
+    });
+
+    promise.
+      then((c) => {
+        console.log(c);
+      }).
+      catch((d) => {
+        console.log(d);
+      }).
+      finally(() => {
+        console.log('finaly completed');
+      })
   }
 
   //   submitForm(formData: any, formDirective: FormGroupDirective): void {
